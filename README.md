@@ -8,11 +8,11 @@ According to Wikipedia, Reinforcement Learning (RL) 'is an area of machine learn
 
 This nanodegree teaches cutting-edge Deep Reinforcement Learning algorithms — from Deep Q-Networks (DQN) to Deep Deterministic Policy Gradients (DDPG) to train agents to walk, drive, or perform other complex tasks, and to build a robust portfolio of Deep Reinforcement Learning projects.  Nanodegree milestones include three projects, all of which have detailed requirements and instructions and all of which use the Unity Machine Learning Agents (ML-Agents) toolkit
 
-<h1>Navigation (1st Project)</h1>
+<h1>Continuous Control (2nd Project)</h1>
 
-The first project requires training an agent to collect yellow bananas while avoiding blue bananas.  To be considered successful, the agent must be able to receive an average reward (over 100 episodes) of at least +13.
+The second project requires training an agent to collect yellow bananas while avoiding blue bananas.  To be considered successful, the agent must be able to receive an average reward (over 100 episodes) of at least +13.
 
-![alt text](https://video.udacity-data.com/topher/2018/June/5b1ab4b0_banana/banana.gif "")
+![alt text](https://video.udacity-data.com/topher/2018/June/5b1ea778_reacher/reacher.gif "")
 
 When the agent collects a yellow banana, a reward of +1 will be awarded and a reward of -1 when a blue banana is collected. Hence, it stands to reason that the agent should learn to collect as many yellow bananas as possible while avoiding blue bananas.
 

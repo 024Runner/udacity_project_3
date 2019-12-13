@@ -14,18 +14,9 @@ The second project requires training an agent to maintain the position of double
 
 ![alt text](https://video.udacity-data.com/topher/2018/June/5b1ea778_reacher/reacher.gif "")
 
-When the agent collects a yellow banana, a reward of +1 will be awarded and a reward of -1 when a blue banana is collected. Hence, it stands to reason that the agent should learn to collect as many yellow bananas as possible while avoiding blue bananas.
+The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 
-At each time step, the agent may take one of four actions:
-
-<li>0: Walk Forward
-<li>1: Walk Bakcward
-<li>2: Turn Left
-<li>3: Turn Right
-
-The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction.
-
-The task is episodic, and in order to solve the environment, the agent must get an average score of +13 over 100 consecutive episodes.
+Two options are available to solve the environment:  Either a single agent must received an average reward of +30 over 100 consecutive episodes or multiple agents must get an average score of +30 over 100 consecutive scores and over all agents.
 
 <h2>Prerequisites</h2>
 

@@ -10,7 +10,7 @@ This nanodegree teaches cutting-edge Deep Reinforcement Learning algorithms — 
 
 <h1>Continuous Control (2nd Project)</h1>
 
-The second project requires training an agent to collect yellow bananas while avoiding blue bananas.  To be considered successful, the agent must be able to receive an average reward (over 100 episodes) of at least +13.
+The second project requires training an agent to maintain the position of double-jointed arm at the target location for as many time steps as possible.  To be considered successful, the agent must be able to receive an average of +30 over 100 consecutive episodes.
 
 ![alt text](https://video.udacity-data.com/topher/2018/June/5b1ea778_reacher/reacher.gif "")
 

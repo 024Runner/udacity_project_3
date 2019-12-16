@@ -1,5 +1,5 @@
 <h1>Summary</h1>
-This report describes my implementation of a Deep Q-Network to trained an agent to collect yellow bananas in a large, square world.  I chose a Deep Q-Network because it is well suited for environments consisting of a discrete action space and a continous state space.
+This report describes my implementation of a Deep Deterministic Policy Gradient Neural Network to train an agent to collect yellow bananas in a large, square world.  I chose a Deep Q-Network because it is well suited for environments consisting of a discrete action space and a continous state space.
 
 <h1>Deep Q-Networks</h1>
 <h2>Abstract</h2>

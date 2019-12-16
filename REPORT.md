@@ -6,9 +6,9 @@ This report describes my implementation of a Deep Deterministic Policy Gradient 
 
 In DDPG, two neural networks are used.  One neural network is the actor and the other neural network is the critic.  The former is used to approximate the optimal policy deterministically - which means that we want to always output the best believed action for any given state (this is unlike stochastic policies in which we want the policy to learn the policy distribution over actions).  In other words, we want the believed best action every single time that we query the actor network.  The critic, on the other hand, learns to evaluate the optimal action value function by using the actor's best believed action.
 
-<h2>Input State Space</h2>
+<h2>Continuous Action Spaces</h2>
 
-Even though input state spaces remain technically discrete, they can be very large and difficult to process.  To that end, in order to simplify the problem and optimize the solution, it may be necessary to scale down the input state space in order to leverage optimized neural network operations on GPUs.
+Finding the greedy policy <i>a<sub>t</t></i>
 
 <h2>Action Vector Output</h2>
 

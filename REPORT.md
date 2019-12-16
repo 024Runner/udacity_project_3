@@ -8,7 +8,7 @@ In DDPG, two neural networks are used.  One neural network is the actor and the 
 
 <h2>Continuous Action Spaces</h2>
 
-Finding the greedy policy <i>a<sub>t</t></i>
+Discretizing the action space has many limitations (most notably the 'curse of dimensionality' in which the number of actions increases exponentially with the number of degrees of freedom).  In turn, finding the greedy policy in continuous action spaces requires an optimization of <i>a<sub>t</t></i> at every time step - which is too slow to be practical with large, unconstrained, function approximators and non-trivial action spaces.  To overcome this problem, I implement a DDPG off-policy actor-critic algorithm using a deep function approximator that can learn policies in high-dimensional continuous action spaces.
 
 <h2>Action Vector Output</h2>
 

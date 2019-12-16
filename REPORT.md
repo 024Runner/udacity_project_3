@@ -1,11 +1,10 @@
 <h1>Summary</h1>
-This report describes my implementation of a Deep Deterministic Policy Gradient Neural Network to train an agent to collect yellow bananas in a large, square world.  I chose a Deep Q-Network because it is well suited for environments consisting of a discrete action space and a continous state space.
+This report describes my implementation of a Deep Deterministic Policy Gradient (DDPG) Neural Network to maintain the position of double-jointed arm at the target location for as many time steps as possible.  I chose a DDPG Neural Network because, unlike a DQN, it is well suited for environments consisting of continuous action spaces.
 
-<h1>Deep Q-Networks</h1>
+<h1>DDPG</h1>
 <h2>Abstract</h2>
 
-Deep neural networks act as function approximators.  Specifically, Deep Q-Networks are multi-layered neural networks
-that for a given state output a vector of action values with the max value indicating the action to take.  Reward changes are fed back as the reinforcement signal at each time step.  It stands to reason that, in the beginning, actions are vastly innapropriate because the neural network is initialized with random values.  Hence, it also stands to reason that, in time, actions become more appropriate as the neural network learns to associate states and state sequences with actions.
+In DDPG, two neural networks are used.  One neural network is the actor and the other neural network is the critic.  The former is used to approximate the optimal policy deterministically - which means that we want to always output the best believed action for any given state (this is unlike stochastic policies in which we want the policy to learn the policy distribution over actions).  In other words, we want the believed best action every single time that we query the actor network.  The critic, on the other hand, learns to evaluate the optimal action value function by using the actor's best believed action.
 
 <h2>Input State Space</h2>
 

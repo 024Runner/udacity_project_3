@@ -45,12 +45,13 @@ Recall that the regular network is the most up to date network because it is the
 <li>Minimize the loss  
 
 <h2>Hyperparameters</h2>
-<li>BUFFER_SIZE = int(1e5)  # replay buffer size
-<li>BATCH_SIZE = 64         # minibatch size
-<li>GAMMA = 0.99            # discount factor
-<li>TAU = 1e-3              # for soft update of target parameters
-<li>LR = 5e-4               # learning rate 
-<li>UPDATE_EVERY = 4        # how often to update the network
+<li>BUFFER_SIZE = int(1e7)    # replay buffer size
+<li>BATCH_SIZE = 256           # minibatch size
+<li>GAMMA = 0.99              # discount factor
+<li>TAU = 1e-3                # for soft update of target parameters
+<li>LR_ACTOR = 1e-4           # learning rate actor
+<li>LR_CRITIC = 1e-4          # learning rate critic
+<li>WEIGHT_DECAY = 0          # L2 weight decay
 
 <h1>Results</h1>
 <img src="Results.PNG" alt = "Results" style = "float: left; margin-right: 10px;" />

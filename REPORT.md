@@ -35,7 +35,7 @@ Recall that the regular network is the most up to date network because it is the
 
 <li>Responsible for building a network that maps states to action values.</li>
   
-<h2>agent.py</h2>
+<h2>ddpg_agent.py</h2>
 
 <li>Epsilon-greedy action selection
 <li>Get maximum predicted Q-values (for next states) from target model

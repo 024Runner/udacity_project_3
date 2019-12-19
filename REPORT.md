@@ -58,6 +58,4 @@ Recall that the regular network is the most up to date network because it is the
 
 <h1>Future Work</h1>
 
-Improve agent performance via one of the following algorithms:
-
 Implementing algorithms like PPO, A3C, and D4PG that use multiple (non-interacting, parallel) copies of the same agent to distribute the task of gathering experience.

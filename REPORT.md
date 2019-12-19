@@ -37,12 +37,12 @@ Recall that the regular network is the most up to date network because it is the
   
 <h2>ddpg_agent.py</h2>
 
-<li>Epsilon-greedy action selection
-<li>Get maximum predicted Q-values (for next states) from target model
-<li>Compute Q targets for current states
-<li>Get expected Q values from local model
-<li>Compute loss
-<li>Minimize the loss  
+<li>Implement local and target copies of the actor-critic networks
+<li>Initialize noise generation and replay memory
+<li>Save experiences in replay memory
+<li>Perform action as per current policy (noise encourages exploration)
+<li>Learn by updating critic networks
+<li>Soft update model parameters
 
 <h2>Hyperparameters</h2>
 <li>BUFFER_SIZE = int(1e7)    # replay buffer size

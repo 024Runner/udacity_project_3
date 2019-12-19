@@ -60,6 +60,4 @@ Recall that the regular network is the most up to date network because it is the
 
 Improve agent performance via one of the following algorithms:
 
-<li>Double DQN
-<li>Prioritized Experience Replay
-<li>Dueling DQN
+Implementing algorithms like PPO, A3C, and D4PG that use multiple (non-interacting, parallel) copies of the same agent to distribute the task of gathering experience.

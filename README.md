@@ -8,7 +8,7 @@ According to Wikipedia, Reinforcement Learning (RL) 'is an area of machine learn
 
 This nanodegree teaches cutting-edge Deep Reinforcement Learning algorithms — from Deep Q-Networks (DQN) to Deep Deterministic Policy Gradients (DDPG) to train agents to walk, drive, or perform other complex tasks, and to build a robust portfolio of Deep Reinforcement Learning projects.  Nanodegree milestones include three projects, all of which have detailed requirements and instructions and all of which use the Unity Machine Learning Agents (ML-Agents) toolkit
 
-<h1>Continuous Control (2nd Project)</h1>
+<h1>Collaboration and Competition (3rd Project)</h1>
 
 The second project requires training an agent to maintain the position of double-jointed arm at the target location for as many time steps as possible.  To be considered successful, the agent must be able to receive an average of +30 over 100 consecutive episodes.
 

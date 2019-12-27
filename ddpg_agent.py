@@ -9,27 +9,27 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-BUFFER_SIZE = int(1e7)  # replay buffer size
-BATCH_SIZE = 256        # minibatch size
-GAMMA = 0.99            # discount factor
+BUFFER_SIZE = int(1e6)  # replay buffer size
+BATCH_SIZE = 256         # minibatch size
+GAMMA = 0.999           # discount factor
 TAU = 1e-3              # for soft update of target parameters
-LR_ACTOR = 1e-4         # learning rate of the actor 
+LR_ACTOR = 1e-4        # learning rate of the actor 
 LR_CRITIC = 1e-3        # learning rate of the critic
-WEIGHT_DECAY = 0        # L2 weight decay
+WEIGHT_DECAY = 1e-6     # L2 weight decay
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 class Agent():
+    """Interacts with and learns from the environment."""
     
     def __init__(self, state_size, action_size, random_seed):
-        """
+        """Initialize an Agent object.
         
-        Initialize Agent
-        
+        Params
+        ======
             state_size (int): dimension of each state
             action_size (int): dimension of each action
             random_seed (int): random seed
-        
         """
         self.state_size = state_size
         self.action_size = action_size
@@ -56,9 +56,7 @@ class Agent():
         self.soft_update(self.actor_local, self.actor_target, 1)  
     
     def step(self, states, actions, rewards, next_states, dones):
-        
         """Save experience in replay memory, and use random sample from buffer to learn."""
-        
         # Save experience / reward
         for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
             self.memory.add(state, action, reward, next_state, done)
@@ -68,27 +66,22 @@ class Agent():
             experiences = self.memory.sample()
             self.learn(experiences, GAMMA)
 
-    def act(self, state, add_noise=True):
-        
+    def act(self, state, noise_scale):
         """Returns actions for given state as per current policy."""
-        
         state = torch.from_numpy(state).float().to(device)
         self.actor_local.eval()
         with torch.no_grad():
             action = self.actor_local(state).cpu().data.numpy()
         self.actor_local.train()
-        if add_noise:
-            action += self.noise.sample()
+        action *= (1 - noise_scale)
+        action += self.noise.sample() * noise_scale
         return np.clip(action, -1, 1)
 
     def reset(self):
         self.noise.reset()
 
     def learn(self, experiences, gamma):
-        
-        """
-        
-        Update policy and value parameters using given batch of experience tuples.
+        """Update policy and value parameters using given batch of experience tuples.
         Q_targets = r + γ * critic_target(next_state, actor_target(next_state))
         where:
             actor_target(state) -> action
@@ -99,7 +92,6 @@ class Agent():
             experiences (Tuple[torch.Tensor]): tuple of (s, a, r, s', done) tuples 
             gamma (float): discount factor
         """
-        
         states, actions, rewards, next_states, dones = experiences
 
         # ---------------------------- update critic ---------------------------- #
@@ -130,7 +122,6 @@ class Agent():
         self.soft_update(self.actor_local, self.actor_target, TAU)                     
 
     def soft_update(self, local_model, target_model, tau):
-        
         """Soft update model parameters.
         θ_target = τ*θ_local + (1 - τ)*θ_target
 
@@ -140,16 +131,13 @@ class Agent():
             target_model: PyTorch model (weights will be copied to)
             tau (float): interpolation parameter 
         """
-        
         for target_param, local_param in zip(target_model.parameters(), local_model.parameters()):
             target_param.data.copy_(tau*local_param.data + (1.0-tau)*target_param.data)
 
 class OUNoise:
-    
     """Ornstein-Uhlenbeck process."""
 
-    def __init__(self, size, seed, mu=0., theta=0.15, sigma=0.2):
-        
+    def __init__(self, size, seed, mu=0., theta=0.15, sigma=1.0):
         """Initialize parameters and noise process."""
         self.mu = mu * np.ones(size)
         self.theta = theta
@@ -164,7 +152,7 @@ class OUNoise:
     def sample(self):
         """Update internal state and return it as a noise sample."""
         x = self.state
-        dx = self.theta * (self.mu - x) + self.sigma * np.array([random.random() for i in range(len(x))])
+        dx = self.theta * (self.mu - x) + self.sigma * np.array([(random.random() * 2 - 1) for i in range(len(x))])
         self.state = x + dx
         return self.state
 

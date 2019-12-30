@@ -1,5 +1,5 @@
 <h1>Summary</h1>
-This report describes my implementation of a Deep Deterministic Policy Gradient (DDPG) Neural Network to maintain the position of double-jointed arm at the target location for as many time steps as possible.  I chose a DDPG Neural Network because, unlike a DQN, it is well suited for environments consisting of continuous action spaces.
+This report describes my implementation of a Deep Deterministic Policy Gradient (DDPG) Neural Network to train two agents how to play tennis with goal of keeping the ball in play.  I chose a DDPG Neural Network because, unlike a DQN, it is well suited for environments consisting of continuous action spaces.
 
 <h1>DDPG</h1>
 <h2>Abstract</h2>

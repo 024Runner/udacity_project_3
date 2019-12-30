@@ -12,7 +12,7 @@ This nanodegree teaches cutting-edge Deep Reinforcement Learning algorithms — 
 
 The second project requires training an agent to maintain the position of double-jointed arm at the target location for as many time steps as possible.  To be considered successful, the agent must be able to receive an average of +30 over 100 consecutive episodes.
 
-![alt text](https://video.udacity-data.com/topher/2018/June/5b1ea778_reacher/reacher.gif "")
+![alt text](https://raw.githubusercontent.com/saabrider/udacity_project_3/master/tennis.gif "")
 
 The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
 

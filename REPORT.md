@@ -20,6 +20,8 @@ More specifically, the networks consists of 8 continuous inputs that represent t
 
 While the he actor basically learns the <i>argmax a Q(S, a)</i> which is the best action, the critic learns to evaluate the optimal action value function by using the actor's best believed action.
 
+More specifically, like the actor network, the critic network consists of 8 continuous input representing the state of the environment (also rectified through two fully connected Leaky ReLu layers).  Unlike in the actor network, the previous' layer's output is merged with the actions and sent through another rectifying layer in order to generate a single continous output without activation.
+
 <h2>Replay Buffer</h2>
 
 As with a DQN agent, a DDPG agent also interacts with the environment, experience tuples are stored in a buffer.  Batches of experience tuples are then sampled in order to teach the DDPG agent.  This allows the agent to learn from individual tuples multiple times particularly as it applies to rare occurrences and/or corner cases.  Most importantly, experience replay allows the agent to sample experience tuples from the replay buffer at random in order to avoid learning from highly-correlated sequence tuples.

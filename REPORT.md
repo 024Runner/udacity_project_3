@@ -58,6 +58,9 @@ Recall that the regular network is the most up to date network because it is the
 <li>WEIGHT_DECAY = 1e-6       # L2 weight decay
 
 <h1>Results</h1>
+
+Multiple attempts were carried out by fixing the hyperparameters. The results shown below correspond to the hyperparameters shown above - which consistently solved the environment in less than 2,000 episodes.
+
 <img src="Results.PNG" alt = "Results" style = "float: left; margin-right: 10px;" />
 
 <h1>Future Work</h1>

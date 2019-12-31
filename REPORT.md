@@ -2,6 +2,8 @@
 This report describes my implementation of a Deep Deterministic Policy Gradient (DDPG) Neural Network to train two agents how to play tennis with goal of keeping the ball in play.  I chose a DDPG Neural Network because, unlike a DQN, it is well suited for environments consisting of continuous action spaces.
 
 <h1>DDPG</h1>
+
+
 <h2>Abstract</h2>
 
 In DDPG, two neural networks are used.  One neural network is the actor and the other neural network is the critic.  The former is used to approximate the optimal policy deterministically - which means that we want to always output the best believed action for any given state (this is unlike stochastic policies in which we want the policy to learn the policy distribution over actions).  In other words, we want the believed best action every single time that we query the actor network.  The critic, on the other hand, learns to evaluate the optimal action value function by using the actor's best believed action.
@@ -59,7 +61,7 @@ Recall that the regular network is the most up to date network because it is the
 
 <h1>Results</h1>
 
-Multiple attempts were carried out by fixing the hyperparameters. The results shown below correspond to the hyperparameters shown above - which consistently solved the environment in less than 2,000 episodes.  In this particular case, the environment was solved in 1,751 episodes!  Details shown below:
+Multiple attempts were carried out by fixing the hyperparameters. The results shown below correspond to the hyperparameters shown above - which consistently solved the environment in less than 2,000 episodes.  <font color = "red">In this particular case, the environment was solved in 1,751 episodes!</font>  Details shown below:
 
 <img src="Results.PNG" alt = "Results" style = "float: left; margin-right: 10px;" />
 

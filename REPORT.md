@@ -3,7 +3,7 @@ This report describes my implementation of a Deep Deterministic Policy Gradient 
 
 <h1>DDPG</h1>
 
-<b></i>After having read CONTINUOUS CONTROL WITH DEEP REINFORCEMENT LEARNING by Lillicrap, et al, I chose the DDPG algorithm because it is a model-free approach which 'can learn competitive policies for all of tasks using low-dimensional observations (e.g. cartesian coordinates or joint angles).'  More specifically, this algorithm seems well suited for this particular observation space which consists of variables corresponding to the position and velocity of the ball and rackets.</b></i>
+<b><i>After having read CONTINUOUS CONTROL WITH DEEP REINFORCEMENT LEARNING by Lillicrap, et al, I chose the DDPG algorithm because it is a model-free approach which 'can learn competitive policies for all of tasks using low-dimensional observations (e.g. cartesian coordinates or joint angles).'  More specifically, this algorithm seems well suited for this particular observation space which consists of variables corresponding to the position and velocity of the ball and rackets.</b></i>
 
 <h2>Abstract</h2>
 

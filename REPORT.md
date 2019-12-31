@@ -13,6 +13,13 @@ In DDPG, two neural networks are used.  One neural network is the actor and the 
 
 Discretizing the action space has many limitations (most notably the 'curse of dimensionality' in which the number of actions increases exponentially with the number of degrees of freedom).  In turn, finding the greedy policy in continuous action spaces requires an optimization of <i>a<sub>t</t></i> at every time step - which is too slow to be practical with large, unconstrained, function approximators and non-trivial action spaces.  To overcome this problem, I implement a DDPG off-policy actor-critic algorithm using a deep function approximator that can learn policies in high-dimensional continuous action spaces.
 
+<h2>Architecture</h2>
+
+<b><i>According to [Lillicrap, et al](https://arxiv.org/pdf/1509.02971.pdf), a key feature of the DDPG algorithm is simplicity because of the inherent straightforwardness of the actor-critic architecture which makes learning possible with very few “moving parts” (thereby, making it easy to implement and scale to more difficult problems and larger networks if necessary).
+
+Moreover, I was intrigued by the premise that DDPG "can sometimes find policies that exceed the performance of the planner."  This coupled with the aforementioned simplicity and straightforwardness are the main reasons why I chose this model architecture.
+</b></i>
+
 <h2>Actor</h2>
 
 The actor is used to approximate the optimal policy deterministically.  I.e., we want to always output the best believed action for any given state.  This is unlike a stochastic policies in which we would like the policy to learn a probability over the actions. In DDPG, we want the believed best action every single time we query the actor network (this is a deterministic policy). 

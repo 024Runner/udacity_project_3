@@ -61,7 +61,7 @@ Recall that the regular network is the most up to date network because it is the
 
 <h1>Results</h1>
 
-Multiple attempts were carried out by fixing the hyperparameters. The results shown below correspond to the hyperparameters shown above - which consistently solved the environment in less than 2,000 episodes.  <font color = "red">In this particular case, the environment was solved in 1,751 episodes!</font>  Details shown below:
+Multiple attempts were carried out by fixing the hyperparameters. The results shown below correspond to the hyperparameters shown above - which consistently solved the environment in less than 2,000 episodes.  <b><i>In this particular case, the environment was solved in 1,751 episodes!</b></i>  Details shown below:
 
 <img src="Results.PNG" alt = "Results" style = "float: left; margin-right: 10px;" />
 

@@ -17,7 +17,7 @@ Discretizing the action space has many limitations (most notably the 'curse of d
 
 The actor is used to approximate the optimal policy deterministically.  I.e., we want to always output the best believed action for any given state.  This is unlike a stochastic policies in which we would like the policy to learn a probability over the actions. In DDPG, we want the believed best action every single time we query the actor network (this is a deterministic policy). 
 
-More specifically, the networks consists of 8 continuous inputs that represent the state of the environment (rectified through two fully connected Leaky ReLu layers).  Two <b>tanh</b> activated continuous output values represent the action values between -1 and 1. 
+More specifically, the networks consists of 8 continuous inputs that represent the state of the environment (rectified through two fully connected Leaky ReLu layers).  Two <b>tanh</b> activated continuous output values represent the action values between -1 and 1. <b><i>Noise (theta = 0.15, sigma = 1.0) replaces the actions by factor 1.0 and decaying by 0.995 per episode.</b></i>
 
 <h2>Critic</h2>
 

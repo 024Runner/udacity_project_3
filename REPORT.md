@@ -52,6 +52,9 @@ Recall that the regular network is the most up to date network because it is the
 <li>Soft update model parameters
 
 <h2>Hyperparameters</h2>
+
+<b><i>Multiple attempts were carried out by fixing the hyperparameters. The results shown below correspond to the hyperparameters shown above - which consistently solved the environment in less than 2,000 episodes.</b></i>
+
 <li>BUFFER_SIZE = int(1e6)    # replay buffer size
 <li>BATCH_SIZE = 256          # minibatch size
 <li>GAMMA = 0.999             # discount factor
@@ -62,7 +65,7 @@ Recall that the regular network is the most up to date network because it is the
 
 <h1>Results</h1>
 
-Multiple attempts were carried out by fixing the hyperparameters. The results shown below correspond to the hyperparameters shown above - which consistently solved the environment in less than 2,000 episodes.  <b><i>In this particular case, the environment was solved in 1,751 episodes!</b></i>  Details shown below:
+<b><i>In this particular case, the environment was solved in 1,751 episodes!</b></i>  Details shown below:
 
 <img src="Results.PNG" alt = "Results" style = "float: left; margin-right: 10px;" />
 
